@@ -163,14 +163,8 @@ for i in range(24):
                     d = 0
                     for i in range(len(p) - 1):
                         d += dists[combo_to_num(p[i] + p[i + 1])]
-                        if x == 1:
-                            print(p[i] + p[i + 1], d)
-                    if x == 1:
-                        print(a, b)
-                        print(p, d)
                     dists_new[x] = min(dists_new[x], d)
     dists = dists_new.copy()
-    print(dists)
 
 
 f = open('input.txt', 'r')
@@ -182,11 +176,9 @@ for line in lines:
     for op in no:
         ans = 0
         num = code_to_num(op)
-        print(num)
         for i in range(25):
             ans += dists[i] * num[i]
         final_ans = min(final_ans, ans)
-    print(final_ans)
     res += int(line[:-1]) * final_ans
 print(res)
 
