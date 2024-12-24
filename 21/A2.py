@@ -169,7 +169,7 @@ def best_option_calc(seq):
     return res
 
 
-f = open('input.txt', 'r')
+f = open('test.txt', 'r')
 lines = f.read().splitlines()
 best_options = dict()
 cnt = 0
@@ -177,18 +177,19 @@ for line in lines:
     line = line.strip()
     # if line == '456A':
     no = num_options_global(line)
-    l = 10000000000
-    f_enc = ''
-    for num_op in no:
-        no_0 = num_op.split('A')
-        enc = ''
-        for i in no_0[:-1]:
-            enc += best_option_calc(i + 'A')
-        if len(enc) < l:
-            l = len(enc)
-            f_enc = enc
-    print(f_enc, len(f_enc))
-    cnt += len(f_enc) * int(line[:-1])
+    print(no)
+    # l = 10000000000
+    # f_enc = ''
+    # for num_op in no:
+    #     no_0 = num_op.split('A')
+    #     enc = ''
+    #     for i in no_0[:-1]:
+    #         enc += best_option_calc(i + 'A')
+    #     if len(enc) < l:
+    #         l = len(enc)
+    #         f_enc = enc
+    # print(f_enc, len(f_enc))
+    # cnt += len(f_enc) * int(line[:-1])
 
     # break
 
